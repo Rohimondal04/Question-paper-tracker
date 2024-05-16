@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin and Add Faculty Panels</title>
+    <style>
+        .choose{
+            border: 1px solid black;
+            padding: 10px 10px 10px 20px;
+            width: 400px;
+            margin-top: 200px;
+            background-color: #adadad;
+            border-radius: 5px;
+
+        }
+        /*body{*/
+        /*    background:#ffffff;*/
+        /*}*/
+        .button{
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="choose">
+<!--<h1>Welcome to the Website</h1>-->
+
+<h2>Admin Panel</h2>
+<form action="/admin" method="post">
+    <button class="button" type="submit">Go to Admin Panel</button>
+</form>
+
+<h2>Add A New Faculty</h2>
+<form action="/faculty" method="post">
+    <button class="button" type="submit">Go to the Add Faculty Panel</button>
+
+</form>
+    </div>
+</center>
+</body>
+</html>

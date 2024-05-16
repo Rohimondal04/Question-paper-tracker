@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="/css/login.css">-->
+    <title>Login Page and Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight:500;
+            font-style: normal;
+            font-size:13px;
+        }
+        #img{
+            width:92px;
+            height:90px;
+            position:absolute;
+            margin:2% 3%;
+        }
+        #title{
+            font-size:20px;
+        }
+
+        .hw{
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background: linear-gradient(#e2e8ea, #2c97d9);
+            background-size: cover;
+            position: absolute;
+
+        }
+        .form-box{
+            width: 380px;
+            height: 480px;
+            position: relative;
+            margin: 6% auto;
+            background: rgba(255, 251, 246, 0.84);
+            border-radius: 15px;
+            padding: 5px;
+            overflow: hidden;
+            box-shadow:0 0 10px 2px rgba(0, 58, 112, 0.89);
+        }
+
+
+        .button-box{
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            /*box-shadow: 0 0 20px 8px rgba(46, 68, 169, 0.63);*/
+            border-radius: 30px;
+        }
+
+        #btn{
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            /*background: rgb(253, 253, 255);*/
+            border-radius: 30px;
+            transition: .5s;
+        }
+        .input-group{
+            top: 180px;
+            position: absolute;
+            width: 350px;
+            transition: .5s;
+        }
+        .input-field{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid #3261b7;
+            outline: none;
+            background: transparent;
+        }
+        .submit-btn{
+            width:85%;
+            padding: 10px 30px;
+            cursor : pointer;
+            display: block;
+            margin:auto;
+            background: rgba(10, 61, 10, 0.85);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+            color: #ffffff;
+        }
+        span{
+            color: #4b4b4b;
+            font-size: 12px;
+            bottom: 68px;
+            position: absolute;
+        }
+        #login{
+            left: 10px;
+        }
+        #register
+        {
+            left: 450px;
+        }
+        .submit-btn:hover{scale:1.1}
+        .submit-btn:active{background-color: rgb(77, 218, 89);
+            color: black;
+        }
+        @media (min-width: 300px) and (max-width: 1000px) {
+
+            .form-box{
+                margin:30% auto;
+                scale:160%;
+            }
+            #img{
+                margin:2% 43%;
+                scale:120%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+<div class="hw">
+    <img align="center" src="/images/logo.png" id="img">
+    <div class="form-box">
+        <div  class="button-box">
+           <center> <div id="btn"></div></center>
+<!--            <b><center>Log In</center></b>-->
+<!--            <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>-->
+        </div><h6 id="title" align="center"> login </h6>
+        <br><h5 id="title" align="center"> Question Paper Traker </h5>
+        <form id="login" class="input-group" method="post" action="/login">
+<!--            <input name="username" type="text" class="input-field" placeholder="User Id" required>-->
+            <input name="email" type="email" class="input-field" placeholder="Email ID">
+            <input name="password" type="password" class="input-field" id="pass" placeholder="Enter Password" required>
+            <input type="checkbox" class="showpass" onclick="myFunction()"> Show Password
+            <br><br>
+            <button type="submit" class="submit-btn">Log in </button>
+        </form>
+<!--        <form id="register" method="post" action="/save" class="input-group">-->
+<!--            <input name="username" type="text" class="input-field" placeholder="User Id" required>-->
+<!--            <input name="email" type="email" class="input-field" placeholder="Email Id (only Adamas university student mail)" required >-->
+<!--            <input name="password" type="password" class="input-field" id="pass2" placeholder="Enter New Password" required>-->
+<!--            <input type="checkbox"  class="showpass" onclick="myFunction()"> Show Password-->
+<!--            <br><br>-->
+<!--            <button type="submit" class="submit-btn">Register </button>-->
+<!--        </form>-->
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        var p = document.getElementById("pass");
+        if (p.type === "password") {
+            p.type = "text";
+        } else {
+            p.type = "password";
+        }}
+</script>
+</body>
+</html>
