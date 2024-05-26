@@ -1,49 +1,118 @@
-
-<html>
-<center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Question Paper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#e2e8ea, #2c97d9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .required label::after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
     <form action="/upload" method="post" enctype="multipart/form-data">
         <table border="0" cellpadding="5" cellspacing="0" width="600">
-            <tr> <td>
-                <label for="facultyName">Faculty Name:</label>
-
-            </td> <td>
-                <input name="facultyName" type="text" maxlength="60" style="width:100%;max-width: 146px;" value="{{userDetails.facultyName}}" readonly>
-                <!--            <input name="LastName" type="text" maxlength="60" style="width:100%;max-width: 146px;" />-->
-            </td> </tr> <tr> <td>
-            <label for="courseName">Course Name:</label>
-        </td> <td>
-            <input name="courseName" type="text" maxlength="60" style="width:100%;max-width: 300px;" value="{{userDetails.courseName}}" readonly>
-        </td> </tr> <tr> <td>
-            <label for="courseCode">Course Code*:</label>
-        </td>
-            <td>
-                <input name="courseCode" type="text" maxlength="60" style="width:100%;max-width: 300px;" value="{{userDetails.courseCode}}" readonly>
-            </td>
-        </tr>
-            <tr> <td>
-                <label for="email">Email:</label>
-            </td>
+            <tr>
                 <td>
-                    <input name="email" type="text" maxlength="60" style="width:100%;max-width: 300px;" value="{{userDetails.email}}" readonly>
-                </td> </tr>
-            <tr>
-            <td>
-                <div class="required">
-                    <label for="file"> Upload Your Question Paper:</label>
-                </div>
-                <br>
-                <input type="file" name="file" required>
-            </td>
+                    <label for="facultyName">Faculty Name:</label>
+                </td>
+                <td>
+                    <input name="facultyName" type="text" maxlength="60" value="{{userDetails.facultyName}}" readonly>
+                </td>
             </tr>
             <tr>
-                <td> <input type="text" value="submited" name="status" hidden required> </td>
+                <td>
+                    <label for="courseName">Course Name:</label>
+                </td>
+                <td>
+                    <input name="courseName" type="text" maxlength="60" value="{{userDetails.courseName}}" readonly>
+                </td>
             </tr>
             <tr>
-            <td>
-
-                <input name="skip_Submit" type="submit" value="Submit" />
-            </td> </tr>
+                <td>
+                    <label for="courseCode">Course Code:</label>
+                </td>
+                <td>
+                    <input name="courseCode" type="text" maxlength="60" value="{{userDetails.courseCode}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email:</label>
+                </td>
+                <td>
+                    <input name="email" type="text" maxlength="60" value="{{userDetails.email}}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="required">
+                        <label for="file">Upload Your Question Paper:</label>
+                    </div>
+                </td>
+                <td>
+                    <input type="file" name="file" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" value="submitted" name="status" hidden required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input name="skip_Submit" type="submit" value="Submit">
+                </td>
+            </tr>
         </table>
     </form>
-</center>
+</div>
+</body>
 </html>
